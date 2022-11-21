@@ -185,7 +185,7 @@ main {
 }
 
 .container h3 {
-    line-height: 1.2;
+    line-height: 1.5;
     font-weight: 500;
 }
 
@@ -209,6 +209,9 @@ main {
     border-radius: var(--radius);
     box-shadow: var(--light-shadow);
 }
+.add-QA {
+    padding: 0;
+}
 .question h4 {
     text-transform: none;
     line-height: 1.5;
@@ -220,11 +223,12 @@ main {
 }
 .question header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 .question header h4 {
     margin-bottom: 0;
+    margin-right: auto;
 }
 .btn {
     font-size: 1.5rem;
@@ -242,6 +246,10 @@ main {
     margin-left: 1rem;
     align-self: center;
     min-width: 2rem;
+}
+.btn-del {
+    font-size: 1.1rem;
+    text-transform: capitalize;
 }
 
 .btn2 {

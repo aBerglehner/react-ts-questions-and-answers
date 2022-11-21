@@ -25,7 +25,7 @@ export const questions = [
         info: 'A queue refers to a linear data structure that performs operations in a FIFO order. In a queue, the least recently added elements are removed first as opposed to a stack. ',
     },
     {
-        id: 5,
+        id: 6,
         title: 'Explain Doubly Linked Lists?',
         info: 'Doubly linked lists are categorized as a special type of linked list in which traversal across the data elements can be done in both directions. This is made possible by the presence of two links in every node, one that links to the node next to it and another that connects to the node before it.',
     },

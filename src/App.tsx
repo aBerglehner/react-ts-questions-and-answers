@@ -21,8 +21,6 @@ function App() {
         const name: string = e.target.name;
         const value: string = e.target.value;
         setNewQuestion({ ...newQuestion, id: getNextId(), [name]: value });
-
-        console.log(newQuestion);
     };
 
     const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
@@ -39,16 +37,23 @@ function App() {
                 <h3>questions and answers</h3>
                 <section className='info'></section>
                 {questions.map((question) => {
-                    return <Question key={question.id} {...question}></Question>;
+                    return (
+                        <Question
+                            key={question.id}
+                            {...question}
+                            questions={questions}
+                            setQuestions={setQuestions}
+                        ></Question>
+                    );
                 })}
             </div>
 
-            {/* start */}
             <article className='container2'>
                 <form>
                     <div className='form-control'>
-                        <label htmlFor='title'>Title : </label>
+                        <h4>Title: </h4>
                         <input
+                            className='question add-QA'
                             type='text'
                             id='title'
                             name='title'
@@ -57,8 +62,9 @@ function App() {
                         />
                     </div>
                     <div className='form-control'>
-                        <label htmlFor='info'>Info : </label>
+                        <h4>Info: </h4>
                         <textarea
+                            className='question add-QA'
                             rows={4}
                             name='info'
                             value={newQuestion.info}
@@ -70,7 +76,6 @@ function App() {
                     </button>
                 </form>
             </article>
-            {/* end */}
         </main>
     );
 }
