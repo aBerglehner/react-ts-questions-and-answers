@@ -12,7 +12,7 @@ function App() {
     });
 
     const getNextId = (): number => {
-        return questions[questions.length - 1].id + 1;
+        return questions[questions.length - 1]?.id + 1 || 0;
     };
 
     const handleChange = (
@@ -33,21 +33,24 @@ function App() {
 
     return (
         <main>
-            <div className='container'>
-                <h3>questions and answers</h3>
-                <section className='info'></section>
-                {questions.map((question) => {
-                    return (
-                        <Question
-                            key={question.id}
-                            {...question}
-                            questions={questions}
-                            setQuestions={setQuestions}
-                        ></Question>
-                    );
-                })}
-            </div>
-
+            {questions.length ? (
+                <div className='container'>
+                    <h3>questions and answers</h3>
+                    <section className='info'></section>
+                    {questions.map((question) => {
+                        return (
+                            <Question
+                                key={question.id}
+                                {...question}
+                                questions={questions}
+                                setQuestions={setQuestions}
+                            ></Question>
+                        );
+                    })}
+                </div>
+            ) : (
+                ''
+            )}
             <article className='container2'>
                 <form>
                     <div className='form-control'>
